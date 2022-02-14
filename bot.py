@@ -56,7 +56,7 @@ while True:
                  f.write(f'\n\n        bot.reply_to(message, "{commandreply}")')
               # print(colored('{*>_} successfully', 'green'))
               #function 
-            elif inpt == "{bot = message['text']}":
+            elif inpt == '{bot = message["text"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
@@ -155,26 +155,26 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n   else:")
 
-            elif inpt == "{bot == ban.user['id = w.reply']}":
+            elif inpt == '{bot == ban.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
-            elif inpt == "{bot == unban.user['id = w.reply']}":
+            elif inpt == '{bot == unban.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.unban_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
-            elif inpt == "{bot == unmute.user['id = w.reply']}":
+            elif inpt == '{bot == unmute.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
 
-            elif inpt == "{bot == kick.user['id = w.reply', to]}":
+            elif inpt == '{bot == kick.user["id = w.reply", to]}':
               commandban2 = input("{*>_} ban to >")
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
@@ -182,13 +182,13 @@ while True:
                  f.write(f"\n\n        bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id, message.date + {commandban2})")
 
 
-            elif inpt == "{bot == mute.user['id = w.reply']}":
+            elif inpt == '{bot == mute.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.restric_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
-            elif inpt == "{bot == ban.user['id = w.reply', to]}":
+            elif inpt == '{bot == ban.user["id = w.reply", to]}':
               commandmute2 = input("{*>_} mute to >")
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
@@ -217,7 +217,7 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n         text = bot.send_message(message.chat.id, "{commandtext}")')
 
-            elif inpt == "{bot = keyboard.button['True']}":
+            elif inpt == '{bot = keyboard.button["True"]}':
               commandbutton = input('{*>_} your button name > ')
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
