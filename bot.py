@@ -5,12 +5,13 @@ import os
 
 init()
 
-print(colored("\n\nTelegram bot creator\nClassic Code Script 1.2.0\nby Anddows\n\n", "red"))
+print(colored("\n\nTelegram bot creator\nClassic Code Script 1.3.0\nby Anddows\n\n", "red"))
 
 while True:
             inpt = input('*>_ ')
             inpt = inpt.strip()
             if inpt == '{c = telebot.python}':
+              os.mkdir("files")
               token = input("{*>_} your token > ")    
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
@@ -56,20 +57,20 @@ while True:
                  f.write(f'\n\n        bot.reply_to(message, "{commandreply}")')
               # print(colored('{*>_} successfully', 'green'))
               #function 
-            elif inpt == "{bot = message['text']}":
+            elif inpt == '{bot = message["text"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n@bot.message_handler(content_types = ['text'])\ndef send_message(message):")
               # print(colored('{*>_} successfully', 'green'))
 
-            elif inpt == "{bot = message['photo']}":
+            elif inpt == '{bot = message["photo"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n@bot.message_handler(content_types = ['photo'])\ndef photo_message(message):")
 
-            elif inpt == "{bot = message['audio']}":
+            elif inpt == '{bot = message["audio"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
@@ -129,6 +130,9 @@ while True:
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\nbot.polling(none_stop = True)")
+              print(colored('{*>_} creating...', 'green'))
+              time.sleep(3)
+              print(colored('{*>_} successfully created', 'green'))
 
             elif inpt == "{bot.print == True}":
               print(colored('{*>_} Scanning...', 'red'))
@@ -155,26 +159,26 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n   else:")
 
-            elif inpt == "{bot == ban.user['id = w.reply']}":
+            elif inpt == '{bot == ban.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
-            elif inpt == "{bot == unban.user['id = w.reply']}":
+            elif inpt == '{bot == unban.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.unban_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
-            elif inpt == "{bot == unmute.user['id = w.reply']}":
+            elif inpt == '{bot == unmute.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
 
-            elif inpt == "{bot == kick.user['id = w.reply', to]}":
+            elif inpt == '{bot == kick.user["id = w.reply", to]}':
               commandban2 = input("{*>_} ban to >")
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
@@ -182,13 +186,13 @@ while True:
                  f.write(f"\n\n        bot.kick_chat_member(message.chat.id, message.reply_to_message.from_user.id, message.date + {commandban2})")
 
 
-            elif inpt == "{bot == mute.user['id = w.reply']}":
+            elif inpt == '{bot == mute.user["id = w.reply"]}':
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n        bot.restric_chat_member(message.chat.id, message.reply_to_message.from_user.id)")
 
-            elif inpt == "{bot == ban.user['id = w.reply', to]}":
+            elif inpt == '{bot == ban.user["id = w.reply", to]}':
               commandmute2 = input("{*>_} mute to >")
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
@@ -217,7 +221,7 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n         text = bot.send_message(message.chat.id, "{commandtext}")')
 
-            elif inpt == "{bot = keyboard.button['True']}":
+            elif inpt == '{bot = keyboard.button["True"]}':
               commandbutton = input('{*>_} your button name > ')
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
@@ -260,26 +264,26 @@ while True:
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
-                 f.write(f'\n\n      bot.send_message(message.chat.id, "{commandsendbutton}",')
+                 f.write(f'\n\n        bot.send_message(message.chat.id, "{commandsendbutton}",')
               commandreplybutton = input('{*>_} your button name reply > ')
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
-                 f.write(f'\n\nreply_markup = {commandreplybutton}')
+                 f.write(f' reply_markup = {commandreplybutton})')
 
             elif inpt == "{bot == send.photo}":
               commandphoto = input('{*>_} your photo name > ')
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
-                 f.write(f'\n\n        bot.send_photo(message.chat.id, photo = open("{commandphoto}", "rb"))')
+                 f.write(f'\n\n        bot.send_photo(message.chat.id, photo = open("files/{commandphoto}", "rb"))')
 
             elif inpt == "{bot == send.audio}":
               commandaudio = input('{*>_} your audio name > ')
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
-                 f.write(f'\n\n        bot.send_audio(message.chat.id, audo = open("{commandaudio}", "rb"))')
+                 f.write(f'\n\n        bot.send_audio(message.chat.id, audo = open("files/{commandaudio}", "rb"))')
 
             elif inpt == "{bot.message.pin == w.id}":
               print(colored('{*>_} Scanning...', 'red'))
