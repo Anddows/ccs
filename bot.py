@@ -2,18 +2,21 @@ import time
 from colorama import init
 from termcolor import colored
 import os
+import colors
 
 init()
 
-print(colored("\n\nTelegram bot creator\nClassic Code Script 1.3.0\nby Anddows\n\n", "red"))
-
+print(colored("\n\nTelegram bot creator\nClassic Code Script 1.4.0\nby Anddows\n\n", colors.name))
 while True:
             inpt = input('*>_ ')
             inpt = inpt.strip()
             if inpt == '{c = telebot.python}':
-              os.mkdir("files")
+              try:
+                os.mkdir("files")
+              except:
+                print("opened")
               token = input("{*>_} your token > ")    
-              print(colored('{*>_} Scanning...', 'red'))
+              print(colored('{*>_} Scanning...', colors.name))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"import telebot\n\nbot = telebot.TeleBot('{token}')")
@@ -47,11 +50,22 @@ while True:
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n@bot.message_handler(commands = ['{command2}'])\ndef {command2}_message(message):")
+
+            elif inpt == '{change = color}':
+              print(colored("colors see this,\n\n"))
+              print(colored("color red", "red"))
+              print(colored("color blue", "blue"))
+              print(colored("color green", "green"))
+
+              commandchange = input("{*>_} your color for change > ")
+              with open("colors.py", "w") as f:
+                 f.write(f'name = "{commandchange}"')
               # print(colored('{*>_} successfully', 'green'))
+              print(colored('{*>_} Changed!', colors.name))
 
             elif inpt == '{bot = w.reply}':
               commandreply = input("{*>_} your text > " )
-              print(colored('{*>_} Scanning...', 'red'))
+              print(colored('{*>_} Scanning...', colors.name))
               time.sleep(3)
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n        bot.reply_to(message, "{commandreply}")')
@@ -285,6 +299,13 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n        bot.send_audio(message.chat.id, audo = open("files/{commandaudio}", "rb"))')
 
+            elif inpt == "{bot == send.animation}":
+              commandaudio = input('{*>_} your animation name > ')
+              print(colored('{*>_} Scanning...', 'red'))
+              time.sleep(3)
+              with open('bot1.py', 'a') as f:
+                 f.write(f'\n\n        bot.send_audio(message.chat.id, animation = open("files/{commandaudio}", "rb"))')
+
             elif inpt == "{bot.message.pin == w.id}":
               print(colored('{*>_} Scanning...', 'red'))
               time.sleep(3)
@@ -299,6 +320,6 @@ while True:
               # print(colored('{*>_} successfully', 'green'))
 
             else:
-              print(colored(f'*>_ CommandError: command <{inpt}> not defined', 'red'))
+              print(colored(f'*>_ CommandError: command <{inpt}> not defined', colors.name))
             
            
