@@ -223,7 +223,7 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f' reply_markup = {commandreplybutton})')
       
-            elif inpt == "{bot == send.photo["w.file"]}":
+            elif inpt == '{bot == send.photo.from_dir}':
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n        bot.send_photo(message.chat.id, photo = open(files, "rb"))')
 
