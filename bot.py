@@ -59,6 +59,28 @@ while True:
               commandwrite = input('{*>_} your text > ')
               print(colored(f'*>_ {commandwrite}', colors.name))
 
+            elif inpt == '{c = class}':
+              commandclass = input('{*>_} input name > ')
+              with open("colors.py", "w") as f:
+                f.write(f'class {commandclass}\n')
+
+            elif inpt == '{c = func}':
+              commandfunc2 = input("{*>_} input name > ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f"def {commandfunc2}\n")
+
+            elif inpt == '{c = variable}':
+              commandvariables = input("{*>_} your variable name >")
+              with open('bot1.py', 'a') as f:
+                 f.write(f"\n{commandvariables} = ")
+              commandvariables2 = input("your variable > ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f"\n{commandvariables2}")
+
+
+              
+
+
             elif inpt == '{change = color}':
               print(colored("colors see this,\n\n"))
               print(colored("color red", "red"))
@@ -288,10 +310,10 @@ while True:
               print(colored("{change = color}", colors.name))
 
             elif inpt == '{bot == send.id}':
-            commandid2 = input("{*>_} input id > ")
+              commandid2 = input("{*>_} input id > ")
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n         bot.send_message({commandid2},')
-            commandsend2 = input("{*>_} input text > ")
+              commandsend2 = input("{*>_} input text > ")
               with open('bot.py', 'a') as f:
                 f.write(f'{commandsend2})')
 
