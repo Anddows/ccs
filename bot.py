@@ -6,7 +6,13 @@ import colors
 
 init()
 
-print(colored("\n\nTelegram bot creator\nClassic Code Script 1.5.0\nby Anddows\n\n", colors.name))
+
+commandopen = "("
+commandclose = ")"
+commandpoint = "."
+commandpoint2 = ","
+
+print(colored("\n\nTelegram bot creator\nClassic Code Script 1.8.0\nby Code Idea\n\n", colors.name))
 while True:
             inpt = input('*>_ ')
             inpt = inpt.strip()
@@ -49,6 +55,10 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n@bot.message_handler(commands = ['{command2}'])\ndef {command2}_message(message):")
 
+            elif inpt == '{*write}':
+              commandwrite = input('{*>_} your text > ')
+              print(colored(f'*>_ {commandwrite}', colors.name))
+
             elif inpt == '{change = color}':
               print(colored("colors see this,\n\n"))
               print(colored("color red", "red"))
@@ -70,7 +80,16 @@ while True:
             elif inpt == '{bot = message["text"]}':
               with open('bot1.py', 'a') as f:
                  f.write(f"\n\n@bot.message_handler(content_types = ['text'])\ndef send_message(message):")
+
+
+            elif inpt == '{bot = message.new.member["chat"]}':
+              with open('bot1.py', 'a') as f:
+                 f.write(f"\n\n@bot.message_handler(content_types = ['new_chat_members'])\ndef new_member_message(message):")
               # print(colored('{*>_} successfully', 'green'))
+
+            elif inpt == '{bot = message.left.member["chat"]}':
+              with open('bot1.py', 'a') as f:
+                 f.write(f"\n\n@bot.message_handler(content_types = ['left_chat_member'])\ndef left_member_message(message):")
 
             elif inpt == '{bot = message["photo"]}':
               with open('bot1.py', 'a') as f:
@@ -222,11 +241,6 @@ while True:
               commandreplybutton = input('{*>_} your button name reply > ')
               with open('bot1.py', 'a') as f:
                  f.write(f' reply_markup = {commandreplybutton})')
-      
-            elif inpt == '{bot == send.photo.from_dir}':
-              with open('bot1.py', 'a') as f:
-                 f.write(f'\n\n        bot.send_photo(message.chat.id, photo = open(files, "rb"))')
-
 
             elif inpt == "{bot == send.photo}":
               commandphoto = input('{*>_} your photo name > ')
@@ -258,6 +272,38 @@ while True:
             elif inpt == '{bot = l.admin["w.reply"]}':
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n         bot.promote_chat_member(message.chat.id, message.reply_to_message.from_user.id,can_delete_messages=True, can_pin_messages=True, can_restrict_members=True,  can_promote_members=True, can_change_info=True, can_invite_users = True)')
+
+            elif inpt == '{bot = s.description["chat"]}':
+              commanddesc = input("{*>_} your description > ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'\n\n         bot.set_chat_description(message.chat.id, "{commanddesc}"')
+
+            elif inpt == '{bot = s.title["chat"]}':
+              commandtitle = input("{*>_} your title > ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'\n\n         bot.set_chat_title(message.chat.id, "{commandtitle}"')
+
+            elif inpt == '{#useful}':
+              print(colored("\n{ccs = help}", colors.name))
+              print(colored("{change = color}", colors.name))
+
+            elif inpt == '{bot == send.id}':
+            commandid2 = input("{*>_} input id > ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'\n\n         bot.send_message({commandid2},')
+            commandsend2 = input("{*>_} input text > ")
+              with open('bot.py', 'a') as f:
+                f.write(f'{commandsend2})')
+
+
+
+
+
+
+
+
+
+
 
             # elif inpt == "{bot == send.from.user.id}":
             #   commandid = input("{*>_} your text > ")
