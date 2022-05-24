@@ -62,15 +62,20 @@ bot_description = ['{bot = s.description["chat"]}', 'bot = s.description["chat"]
 bot_title = ['{bot = s.title["chat"]}', 'bot = s.title["chat"]']
 bot_useful = ["{#useful}", "#useful"]
 bot_send_id = ["{bot == send.id}", "bot == send.id"]
+bot_poll_answer = ["{bot == send.poll}", "bot == send.poll"]
 bot_comment = ["{bot == comment}", "bot == comment"]
+bot_clear = ["{ccs = clear}", "ccs = clear"]
 bot_open1 = ["{bot == w.open > write}", "bot == w.open > write"]
 bot_open2 = ["{bot == a.open > write}", "bot == a.open > write"]
+ccs_read = ["{ccs = read}", "ccs = read"]
+bot_bold = ["{bot == send.bold}", "bot == send.bold"]
+bot_mono = ["{bot == send.monospace}", "bot == send.monospace"]
 
 with open("colors.txt", "w") as f:
   f.write('green')
 with open("colors.txt", "r+") as f:
   list = f.read()
-print(colored("\n\nTelegram bot creator\nClassic Code Script 1.9.0\nby Code Idea\n\n", list))
+print(colored("\n\nTelegram bot creator\nClassic Code Script 1.10\nby Code Idea\n\n", list))
 while True:
             inpt = input('*>_ ')
             inpt = inpt.strip()
@@ -112,6 +117,9 @@ while True:
               print(colored('{*>_} successfully', 'green'))
 
 
+            elif inpt in bot_clear:
+              clear = lambda: os.system('clear')
+              clear()
 
 
             elif inpt in commands:
@@ -301,7 +309,46 @@ while True:
             elif inpt in text_bot_send:
               commandtext = input("{*>_} your text > " )
               with open('bot1.py', 'a') as f:
-                 f.write(f'\n\n         text = bot.send_message(message.chat.id, "{commandtext}")')
+                 f.write(f'\n\n        text = bot.send_message(message.chat.id, "{commandtext}")')
+
+            elif inpt in bot_poll_answer:
+              commandpollanswer = input("*>_ . > " )
+              with open('bot1.py', 'a') as f:
+                 f.write(f'\n\n        bot.send_poll(message.chat.id, "{commandpollanswer}",')
+
+            elif inpt in bot_bold:
+              commandsendbold = input("*>_ your text > ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'\n\n        bot.send_message(message.chat.id, "<b>{commandsendbold}</b>", parse_mode = "HTML")')
+
+
+            elif inpt in bot_mono:
+              commandsendmono = input("*>_ your text > ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'\n\n        bot.send_message(message.chat.id, "<code>{commandsendmono}</code>", parse_mode = "HTML")')
+
+#========================== send poll 
+
+
+            elif inpt == "{*":
+              with open('bot1.py', 'a') as f:
+                 f.write(f'[')
+
+            elif inpt == "add answ":     
+              commandanswer = input("*>_ ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'"{commandanswer}",')                            
+
+            elif inpt == "add answ end":
+              commandanswer2 = input("*>_ ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'"{commandanswer2}"')
+
+            elif inpt == "*}":
+              with open('bot1.py', 'a') as f:
+                 f.write(f'])')        
+
+#========================================           
 
             elif inpt in button:
               commandbutton = input('{*>_} your button name > ')
