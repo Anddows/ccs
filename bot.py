@@ -12,7 +12,7 @@ commandpoint = "."
 commandpoint2 = ","
 
 create_t = ["{c = telebot.python}", "c = telebot.python"]
-ccs = ["{ccs = help}", "ccs = help"]
+ccs = ["{ccs = help}", "ccs = help", "$ccs"]
 files1 = ["{del.file = w.name}", "del.file = w.name"]
 files2 = ["{rename.file = w.input}", "rename.file = w.input"]
 commands = ["{s = commands}", "s = commands"]
@@ -63,19 +63,20 @@ bot_title = ['{bot = s.title["chat"]}', 'bot = s.title["chat"]']
 bot_useful = ["{#useful}", "#useful"]
 bot_send_id = ["{bot == send.id}", "bot == send.id"]
 bot_poll_answer = ["{bot == send.poll}", "bot == send.poll"]
-bot_comment = ["{bot == comment}", "bot == comment"]
+bot_comment = ["{#comment}", "#comment"]
 bot_clear = ["{ccs = clear}", "ccs = clear"]
 bot_open1 = ["{bot == w.open > write}", "bot == w.open > write"]
 bot_open2 = ["{bot == a.open > write}", "bot == a.open > write"]
 ccs_read = ["{ccs = read}", "ccs = read"]
 bot_bold = ["{bot == send.bold}", "bot == send.bold"]
 bot_mono = ["{bot == send.monospace}", "bot == send.monospace"]
+bot_link = ["{bot == send.link}", "bot == send.link"]
 
 with open("colors.txt", "w") as f:
   f.write('green')
 with open("colors.txt", "r+") as f:
   list = f.read()
-print(colored("\n\nTelegram bot creator\nClassic Code Script 1.10\nby Code Idea\n\n", list))
+print(colored("\n\nTelegram bot creator\nClassic Code Script 1.11\nby Code Idea\n\n", list))
 while True:
             inpt = input('*>_ ')
             inpt = inpt.strip()
@@ -348,37 +349,39 @@ while True:
               with open('bot1.py', 'a') as f:
                  f.write(f'])')        
 
-#========================================           
+#======================================== 
+# 
+
+            elif inpt == ":$":
+              with open('bot1.py', 'a') as f:
+                 f.write(f'(')
+
+            elif inpt == "add rows":     
+              commandaddrows = input("*>_ ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'"{commandaddrows}",')                            
+
+            elif inpt == "add rows end":
+              commandanswer2 = input("*>_ ")
+              with open('bot1.py', 'a') as f:
+                 f.write(f'"{commandanswer2}"')
+
+            elif inpt == "$:":
+              with open('bot1.py', 'a') as f:
+                 f.write(f')')     
+
+#=========================================
 
             elif inpt in button:
               commandbutton = input('{*>_} your button name > ')
               with open('bot1.py', 'a') as f:
                  f.write(f'\n\n{commandbutton} = telebot.types.ReplyKeyboardMarkup(True)')
 
-            elif inpt in button_name:
-              commandkey = input('{*>_} your button name > ')
+            elif inpt in "bot == row":
+              commandnamebutton = input('{*>_} name > ')
               with open('bot1.py', 'a') as f:
-                 f.write(f'\n\n{commandkey}.row(')
-              print(colored("{*>_} Scanning...", 'red'))
-              # time.sleep(3)
-              # with open('bot1.py', 'a') as f:
-              #    f.write(f'{commandkey2}"')
+                 f.write(f'\n\n{commandnamebutton}.row')
 
-            elif inpt in button_add:
-              commandkey3 = input("{*>_} your button text > ")
-              with open('bot1.py', 'a') as f:
-                 f.write(f' "{commandkey3}"')
-
-            elif inpt == ",":
-              with open('bot1.py', 'a') as f:
-                 f.write(f',')
-
-
-            elif inpt == ")":
-              print(colored('{*>_} Scanning...', 'red'))
-              time.sleep(3)
-              with open('bot1.py', 'a') as f:
-                 f.write(f')')
 
             elif inpt in reply_button:
               commandsendbutton = input('{*>_} your text > ')
@@ -430,8 +433,8 @@ while True:
                  f.write(f'\n\n        bot.set_chat_title(message.chat.id, "{commandtitle}")')
 
             elif inpt in bot_useful:
-              print(colored("\n{ccs = help}", colors.name))
-              print(colored("{change = color}", colors.name))
+              print(colored("\n{ccs = help}"))
+              print(colored("{change = color}"))
 
             elif inpt in bot_send_id:
               commandid2 = input("{*>_} input id > ")
